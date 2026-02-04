@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha J B - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-category li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: #764ba2;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .experience-date {
+            color: #764ba2;
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .education-item h3 {
+            color: #667eea;
+        }
+
+        .education-details {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="margin-bottom: 1rem;">
+            <img src="profile.jpg" alt="Sneha J B" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+        </div>
+        <h1>Sneha J B</h1>
+        <p>Software Engineer | Frontend Developer</p>
+        <div class="contact-links">
+            <a href="mailto:ssnehajb@gmail.com">📧 Email</a>
+            <a href="tel:9482784388">📱 9482784388</a>
+            <a href="https://linkedin.com/in/sneha-jb-3a143b228" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/snehajb1527" target="_blank">💻 GitHub</a>
+            <a href="Sneha_JB_Resume.pdf" download style="background: white; color: #667eea;">📄 Download Resume</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>👋 Hello! I'm Sneha, a passionate Software Engineer and recent Computer Science graduate from Kalpataru Institute of Technology (2025). I'm currently working as a Frontend Developer at Pixels Planet, where I build dynamic and responsive web applications using modern technologies.</p>
+                <br>
+                <p>I specialize in creating user-friendly interfaces with React.js and Next.js, focusing on performance optimization and seamless API integration. With a strong foundation in full-stack development and a keen eye for detail, I'm committed to delivering innovative solutions that solve real-world problems.</p>
+                <br>
+                <p>🎯 My goal is to leverage my technical expertise to contribute to impactful projects and continuously grow as a developer in the ever-evolving tech landscape.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer (Frontend Developer)</div>
+                        <div style="color: #666; margin-top: 0.3rem;">Pixels Planet - Remote, Bangalore</div>
+                    </div>
+                    <div class="experience-date">July 2025 – Present</div>
+                </div>
+                <ul>
+                    <li>Building dynamic and responsive web applications using React.js, Next.js, and JavaScript</li>
+                    <li>Developing and maintaining scalable web applications with focus on performance optimization</li>
+                    <li>Implementing responsive design principles and seamless API integration</li>
+                    <li>Utilizing Redux Toolkit for state management and Tailwind CSS for modern styling</li>
+                    <li>Collaborating with cross-functional teams using Git/GitHub for version control</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Java Full Stack Intern</div>
+                        <div style="color: #666; margin-top: 0.3rem;">JSpider</div>
+                    </div>
+                    <div class="experience-date">March 2025 – August 2025</div>
+                </div>
+                <ul>
+                    <li>Gained hands-on experience in full-stack Java development</li>
+                    <li>Worked with Java, Hibernate, Servlets, and Spring frameworks</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Web Development Intern</div>
+                        <div style="color: #666; margin-top: 0.3rem;">InternPE</div>
+                    </div>
+                    <div class="experience-date">May 2023 – June 2024</div>
+                </div>
+                <ul>
+                    <li>Developed web applications using HTML, CSS, JavaScript, and PHP</li>
+                    <li>Worked on real-world projects to enhance technical skills</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project-card">
+                <h3>🍽️ Taste Explorer: Find Dine and Delight</h3>
+                <p class="project-tech">Technologies: HTML, CSS, JavaScript, PHP, MySQL, API Integration</p>
+                <p>Developed a comprehensive Restaurant Finder website to simplify the dining decision-making process. The platform bridges the gap between diners and restaurants, providing a seamless and enjoyable experience for users to discover new dining options.</p>
+                <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+                    <li>Integrated restaurant APIs for real-time data</li>
+                    <li>Built responsive user interface for optimal viewing across devices</li>
+                    <li>Implemented search and filter functionality for enhanced user experience</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>🛡️ Filtered Wall: Filter Unwanted Messages From OSN User Profiles</h3>
+                <p class="project-tech">Technologies: Java, SQL, Machine Learning</p>
+                <p>Addressed a fundamental issue in Online Social Networks (OSNs) by giving users the ability to control messages posted on their private space, preventing unwanted content from being displayed.</p>
+                <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+                    <li>Implemented information filtering using short text classification</li>
+                    <li>Developed policy-based personalization features</li>
+                    <li>Applied machine learning algorithms for content filtering</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>💬 Online Technical Discussion Forum</h3>
+                <p class="project-tech">Technologies: SQL, DBMS</p>
+                <p>Created a platform for technical discussions that saves time and resources typically spent on in-person meetings. Built with robust database management to handle user interactions and content management efficiently.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Next.js</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Redux Toolkit</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>Hibernate</li>
+                        <li>Servlets</li>
+                        <li>PHP</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>Oracle SQL</li>
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>Eclipse</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Other Skills</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                        <li>Time Management</li>
+                        <li>Communication Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Bachelor of Engineering in Computer Science</h3>
+                <div class="education-details">
+                    <strong>Kalpataru Institute Of Technology, VTU Belagavi</strong><br>
+                    2021 – 2025 | Tiptur, Karnataka<br>
+                    <strong>CGPA:</strong> 9.2 / 10 (87%)
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Pre-University (PCMB)</h3>
+                <div class="education-details">
+                    <strong>SVP College, Karnataka Pre-university Board</strong><br>
+                    2019 – 2021 | Tiptur, Karnataka<br>
+                    <strong>Percentage:</strong> 85%
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>SSLC</h3>
+                <div class="education-details">
+                    <strong>GHS, Karnataka Secondary Board</strong><br>
+                    2019 | Arasikere, Karnataka<br>
+                    <strong>Percentage:</strong> 88%
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <h2>Certifications</h2>
+            
+            <div class="project-card">
+                <h3>🎓 Web Development and React with Python</h3>
+                <p style="color: #666; margin-top: 0.5rem;">VTU - Virtual Internship Program | 2025</p>
+                <a href="https://www.online.vtu.ac.in/course-exam-certificate/d98170ea-2c3e-43eb-a75c-9854f9b65299" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View Certificate →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>🎓 Web Development</h3>
+                <p style="color: #666; margin-top: 0.5rem;">InternPE | 2023</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🎓 Digital Marketing</h3>
+                <p style="color: #666; margin-top: 0.5rem;">Great Learning</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🎓 Overview of Python</h3>
+                <p style="color: #666; margin-top: 0.5rem;">Infosys Springboard</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🎓 Skill Enhancement Program</h3>
+                <p style="color: #666; margin-top: 0.5rem;">VTU | 2025</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="about-content">
+                <p style="margin-bottom: 2rem;">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!</p>
+            </div>
+            
+            <form id="contactForm" style="max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+                    <input type="text" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 5px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                    <input type="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 5px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+                    <textarea required rows="5" style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 5px; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; width: 100%; font-weight: 600; transition: transform 0.3s;">
+                    Send Message
+                </button>
+            </form>
+
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                });
+            </script>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sneha J B. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Built with passion for creating impactful solutions</p>
+    </footer>
+</body>
+</html>
